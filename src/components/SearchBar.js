@@ -3,9 +3,10 @@ import React, { Component } from "react";
 export class SearchBar extends Component {
   state = { term: "" };
 
-  onFormSubmit(event) {
+  onFormSubmit = event => {
     event.preventDefault();
-  }
+    this.props.onSubmitSearch(this.state.term);
+  };
   render() {
     return (
       <div className="ui segment" style={{ marginTop: "10px" }}>
